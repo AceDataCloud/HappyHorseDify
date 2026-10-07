@@ -9,8 +9,8 @@ identity:
   description:
     en_US: Use the Ace Data Cloud Happy Horse APIs in Dify workflows.
     zh_Hans: 在 Dify 工作流中使用 Ace Data Cloud Happy Horse API。
-  icon: icon.png
-  icon_dark: icon.dark.png
+  icon: icon.jpg
+  icon_dark: icon.jpg
   tags:
   - videos
 credentials_for_provider:
@@ -30,6 +30,7 @@ credentials_for_provider:
 tools:
 - tools/happyhorse_generate.yaml
 - tools/happyhorse_task_retrieve.yaml
+- tools/happyhorse_tasks_retrieve_batch.yaml
 extra:
   python:
     source: provider/happyhorse.py

@@ -1,0 +1,75 @@
+[
+  {
+    "name": "happyhorse_generate_video-1",
+    "tool": "happyhorse_generate_video",
+    "inputs": {
+      "prompt": "Test"
+    },
+    "method": "POST",
+    "path": "/happyhorse/videos",
+    "body": {
+      "model": "happyhorse-1.1-t2v"
+    }
+  },
+  {
+    "name": "happyhorse_generate_video-2",
+    "tool": "happyhorse_generate_video",
+    "inputs": {
+      "action": "image_to_video",
+      "image_url": "https://example.org/reference.png"
+    },
+    "method": "POST",
+    "path": "/happyhorse/videos",
+    "body": {
+      "model": "happyhorse-1.1-i2v",
+      "image_url": "https://example.org/reference.png"
+    }
+  },
+  {
+    "name": "happyhorse_generate_video-3",
+    "tool": "happyhorse_generate_video",
+    "inputs": {
+      "action": "reference_to_video",
+      "prompt": "Test",
+      "image_urls": "[\"https://example.org/reference.png\"]"
+    },
+    "method": "POST",
+    "path": "/happyhorse/videos",
+    "body": {
+      "image_urls": [
+        "https://example.org/reference.png"
+      ],
+      "model": "happyhorse-1.1-r2v"
+    }
+  },
+  {
+    "name": "happyhorse_generate_video-4",
+    "tool": "happyhorse_generate_video",
+    "inputs": {
+      "action": "video_edit",
+      "prompt": "Test",
+      "video_url": "https://example.org/reference.mp4"
+    },
+    "method": "POST",
+    "path": "/happyhorse/videos",
+    "body": {
+      "model": "happyhorse-1.0-video-edit"
+    }
+  },
+  {
+    "name": "happyhorse_tasks_retrieve_batch-5",
+    "tool": "happyhorse_tasks_retrieve_batch",
+    "inputs": {
+      "ids": "[\"owned-task\"]"
+    },
+    "method": "POST",
+    "path": "/happyhorse/tasks",
+    "body": {
+      "action": "retrieve_batch",
+      "ids": [
+        "owned-task"
+      ]
+    },
+    "read_only": true
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "backend_revision": "fa94598267a82545fb1afed6ee26bafd6cbb9ca7",
+  "mcp_revision": "f0eed10abf310824cb4c33d4944c63d3654ac95b",
+  "tools": [
+    {
+      "tool": "happyhorse_generate_video",
+      "method": "POST",
+      "path": "/happyhorse/videos",
+      "parameters": [
+        "action",
+        "model",
+        "prompt",
+        "image_url",
+        "image_urls",
+        "video_url",
+        "resolution",
+        "ratio",
+        "duration",
+        "watermark",
+        "audio_setting",
+        "seed",
+        "callback_url"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/d656e357-50cb-4390-b8c9-67464bc2a2f2.json"
+    },
+    {
+      "tool": "happyhorse_task_retrieve",
+      "method": "POST",
+      "path": "/happyhorse/tasks",
+      "parameters": [
+        "task_id",
+        "wait_seconds"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/4fedc9b2-45d7-4e8f-8ce4-8f00ae31c78a.json"
+    },
+    {
+      "tool": "happyhorse_tasks_retrieve_batch",
+      "method": "POST",
+      "path": "/happyhorse/tasks",
+      "parameters": [
+        "ids"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/4fedc9b2-45d7-4e8f-8ce4-8f00ae31c78a.json"
+    }
+  ],
+  "mcp_scope": "happyhorse",
+  "notes": [
+    "Informational MCP model/action lists are represented by tool dropdowns and README capability tables.",
+    "GPT Image covers image-generation/editing/task capabilities of the broader OpenAI MCP; chat is supplied by ModelProviderDify."
+  ]
+}

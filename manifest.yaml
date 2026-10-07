@@ -10,8 +10,8 @@ label:
 description:
   en_US: Use the Ace Data Cloud Happy Horse APIs in Dify workflows.
   zh_Hans: 在 Dify 工作流中使用 Ace Data Cloud Happy Horse API。
-icon: icon.png
-icon_dark: icon.dark.png
+icon: icon.jpg
+icon_dark: icon.jpg
 resource:
   memory: 268435456
   permission:

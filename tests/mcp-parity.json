@@ -1,0 +1,111 @@
+{
+  "mcp_revision": "f0eed10abf310824cb4c33d4944c63d3654ac95b",
+  "mapping": [
+    {
+      "mcp_tool": "happyhorse_list_models",
+      "dify_tools": [],
+      "parameters": {},
+      "unresolved": [],
+      "note": "Model/action selectors and the API reference; informational guidance does not submit a request."
+    },
+    {
+      "mcp_tool": "happyhorse_get_task",
+      "dify_tools": [
+        "happyhorse_task_retrieve"
+      ],
+      "parameters": {
+        "task_id": "task_id"
+      },
+      "unresolved": [],
+      "note": ""
+    },
+    {
+      "mcp_tool": "happyhorse_get_tasks_batch",
+      "dify_tools": [
+        "happyhorse_tasks_retrieve_batch"
+      ],
+      "parameters": {
+        "task_ids": "ids"
+      },
+      "unresolved": [],
+      "note": ""
+    },
+    {
+      "mcp_tool": "happyhorse_generate_video",
+      "dify_tools": [
+        "happyhorse_generate_video"
+      ],
+      "parameters": {
+        "prompt": "prompt",
+        "model": "model",
+        "resolution": "resolution",
+        "ratio": "ratio",
+        "duration": "duration",
+        "watermark": "watermark",
+        "seed": "seed",
+        "callback_url": "callback_url"
+      },
+      "unresolved": [],
+      "note": "Set action=generate"
+    },
+    {
+      "mcp_tool": "happyhorse_generate_video_from_image",
+      "dify_tools": [
+        "happyhorse_generate_video"
+      ],
+      "parameters": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "model": "model",
+        "resolution": "resolution",
+        "ratio": "ratio",
+        "duration": "duration",
+        "watermark": "watermark",
+        "seed": "seed",
+        "callback_url": "callback_url"
+      },
+      "unresolved": [],
+      "note": "Set action=image_to_video"
+    },
+    {
+      "mcp_tool": "happyhorse_generate_video_from_references",
+      "dify_tools": [
+        "happyhorse_generate_video"
+      ],
+      "parameters": {
+        "prompt": "prompt",
+        "image_urls": "image_urls",
+        "model": "model",
+        "resolution": "resolution",
+        "ratio": "ratio",
+        "duration": "duration",
+        "watermark": "watermark",
+        "seed": "seed",
+        "callback_url": "callback_url"
+      },
+      "unresolved": [],
+      "note": "Set action=reference_to_video"
+    },
+    {
+      "mcp_tool": "happyhorse_edit_video",
+      "dify_tools": [
+        "happyhorse_generate_video"
+      ],
+      "parameters": {
+        "prompt": "prompt",
+        "video_url": "video_url",
+        "image_urls": "image_urls",
+        "model": "model",
+        "resolution": "resolution",
+        "ratio": "ratio",
+        "duration": "duration",
+        "audio_setting": "audio_setting",
+        "watermark": "watermark",
+        "seed": "seed",
+        "callback_url": "callback_url"
+      },
+      "unresolved": [],
+      "note": "Set action=video_edit"
+    }
+  ]
+}
