@@ -8,12 +8,14 @@ description:
   human:
     en_US: Use the Ace Data Cloud Happy Horse APIs in Dify workflows.
     zh_Hans: 在 Dify 工作流中使用 Ace Data Cloud Happy Horse API。
-  llm: Use the Ace Data Cloud Happy Horse APIs in Dify workflows. Generation returns
-    a task ID. Query the same task until complete; never resubmit a pending generation.
+  llm: Use the Ace Data Cloud Happy Horse APIs in Dify workflows. For asynchronous
+    results, preserve task_id and use the task retrieval tool until completion. A
+    successful submission is not completed output.
 parameters:
 - name: action
   type: select
   required: false
+  form: form
   label:
     en_US: Action
     zh_Hans: 操作
@@ -22,7 +24,6 @@ parameters:
     zh_Hans: 操作类型。`generate` 为文生视频，`image_to_video` 为首帧图生视频，`reference_to_video` 为参考图生视频，`video_edit`
       为基于视频和参考图的视频编辑。
   llm_description: Set action.
-  form: form
   default: generate
   options:
   - value: generate
@@ -44,15 +45,16 @@ parameters:
 - name: model
   type: select
   required: false
+  form: form
   label:
     en_US: Model
     zh_Hans: 模型
   human_description:
-    en_US: Select the current API model for this operation.
+    en_US: Select a model currently supported by this API. Availability and pricing
+      depend on the chosen model.
     zh_Hans: HappyHorse 模型名称。不同 action 仅支持对应模型族。
-  llm_description: Select the current API model for this operation.
-  form: form
-  default: happyhorse-1.1-t2v
+  llm_description: Select a model currently supported by this API. Availability and
+    pricing depend on the chosen model.
   options:
   - value: happyhorse-1.0-t2v
     label:
@@ -85,6 +87,7 @@ parameters:
 - name: prompt
   type: string
   required: false
+  form: llm
   label:
     en_US: Prompt
     zh_Hans: 提示词
@@ -92,10 +95,10 @@ parameters:
     en_US: Set prompt.
     zh_Hans: 文本提示词。文生视频、参考图生视频和视频编辑场景必填。
   llm_description: Set prompt.
-  form: llm
 - name: image_url
   type: string
   required: false
+  form: form
   label:
     en_US: Image Url
     zh_Hans: 图片链接
@@ -103,22 +106,30 @@ parameters:
     en_US: Set image url.
     zh_Hans: 首帧图生视频的输入图片 URL。仅 `image_to_video` 使用。
   llm_description: Set image url.
-  form: form
 - name: image_urls
   type: string
   required: false
+  form: form
   label:
     en_US: Image Urls
     zh_Hans: 图片链接列表
   human_description:
-    en_US: Set image urls. Enter a JSON array.
-    zh_Hans: 参考图片 URL 数组。`reference_to_video` 支持 1–9 张，`video_edit` 支持 0–5 张。 请填写
-      JSON 数组。
-  llm_description: Set image urls. Enter a JSON array.
-  form: form
+    en_US: Set image urls. Enter a JSON array. Enter a JSON array or object where
+      applicable. Enter a JSON array or object where applicable. Enter a JSON array
+      or object where applicable. Enter a JSON array or object where applicable. Enter
+      a JSON array or object where applicable. Enter a JSON array or object where
+      applicable.
+    zh_Hans: 参考图片 URL 数组。`reference_to_video` 支持 1–9 张，`video_edit` 支持 0–5 张。 数组或对象请使用
+      JSON 格式。
+  llm_description: Set image urls. Enter a JSON array. Enter a JSON array or object
+    where applicable. Enter a JSON array or object where applicable. Enter a JSON
+    array or object where applicable. Enter a JSON array or object where applicable.
+    Enter a JSON array or object where applicable. Enter a JSON array or object where
+    applicable.
 - name: video_url
   type: string
   required: false
+  form: form
   label:
     en_US: Video Url
     zh_Hans: 视频链接
@@ -126,10 +137,10 @@ parameters:
     en_US: Set video url.
     zh_Hans: 待编辑的视频 URL。仅 `video_edit` 使用。
   llm_description: Set video url.
-  form: form
 - name: resolution
   type: select
   required: false
+  form: form
   label:
     en_US: Resolution
     zh_Hans: 分辨率
@@ -137,7 +148,6 @@ parameters:
     en_US: Set resolution.
     zh_Hans: 输出视频分辨率，可选 720P 或 1080P。
   llm_description: Set resolution.
-  form: form
   default: 720P
   options:
   - value: 720P
@@ -151,6 +161,7 @@ parameters:
 - name: ratio
   type: select
   required: false
+  form: form
   label:
     en_US: Ratio
     zh_Hans: 画面比例
@@ -158,7 +169,6 @@ parameters:
     en_US: Set ratio.
     zh_Hans: 输出视频宽高比。文生视频和参考图生视频支持该参数；首帧图生视频会跟随首帧图片比例。
   llm_description: Set ratio.
-  form: form
   default: '16:9'
   options:
   - value: '16:9'
@@ -184,6 +194,7 @@ parameters:
 - name: duration
   type: number
   required: false
+  form: form
   label:
     en_US: Duration
     zh_Hans: 时长（秒）
@@ -191,11 +202,13 @@ parameters:
     en_US: Set duration.
     zh_Hans: 输出视频时长（秒），取值 3–15。`video_edit` 的输出时长由输入视频决定。
   llm_description: Set duration.
-  form: form
   default: 3
+  min: 3
+  max: 15
 - name: watermark
   type: boolean
   required: false
+  form: form
   label:
     en_US: Watermark
     zh_Hans: 水印
@@ -203,11 +216,10 @@ parameters:
     en_US: Set watermark.
     zh_Hans: 是否添加 HappyHorse 水印。默认关闭。
   llm_description: Set watermark.
-  form: form
-  default: false
 - name: audio_setting
   type: select
   required: false
+  form: form
   label:
     en_US: Audio Setting
     zh_Hans: 音频设置
@@ -215,8 +227,6 @@ parameters:
     en_US: Set audio setting.
     zh_Hans: 视频编辑的音频策略。`auto` 由模型决定，`origin` 保留输入视频原音频。
   llm_description: Set audio setting.
-  form: form
-  default: auto
   options:
   - value: auto
     label:
@@ -229,6 +239,7 @@ parameters:
 - name: seed
   type: number
   required: false
+  form: form
   label:
     en_US: Seed
     zh_Hans: 随机种子
@@ -236,7 +247,19 @@ parameters:
     en_US: Set seed.
     zh_Hans: 随机种子，范围 0–2147483647。
   llm_description: Set seed.
+  min: 0
+  max: 2147483647
+- name: callback_url
+  type: string
+  required: false
   form: form
+  label:
+    en_US: Callback Url
+    zh_Hans: 回调 URL
+  human_description:
+    en_US: Set callback url for this operation.
+    zh_Hans: 异步回调地址。设置后接口会立即返回 task_id，任务完成后将结果 POST 到该地址。
+  llm_description: Set callback url for this operation.
 output_schema:
   type: object
   properties:
