@@ -115,17 +115,11 @@ parameters:
     zh_Hans: 图片链接列表
   human_description:
     en_US: Set image urls. Enter a JSON array. Enter a JSON array or object where
-      applicable. Enter a JSON array or object where applicable. Enter a JSON array
-      or object where applicable. Enter a JSON array or object where applicable. Enter
-      a JSON array or object where applicable. Enter a JSON array or object where
       applicable.
     zh_Hans: 参考图片 URL 数组。`reference_to_video` 支持 1–9 张，`video_edit` 支持 0–5 张。 数组或对象请使用
       JSON 格式。
   llm_description: Set image urls. Enter a JSON array. Enter a JSON array or object
-    where applicable. Enter a JSON array or object where applicable. Enter a JSON
-    array or object where applicable. Enter a JSON array or object where applicable.
-    Enter a JSON array or object where applicable. Enter a JSON array or object where
-    applicable.
+    where applicable.
 - name: video_url
   type: string
   required: false

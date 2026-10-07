@@ -1,0 +1,58 @@
+{
+  "tested_at": "2026-10-07T08:53:39.786013+00:00",
+  "environment": "Dify CE 1.17.1 / plugin daemon 0.6.10-local",
+  "transport": "official remote-debug; signature verification enabled",
+  "browser_test_run": true,
+  "unit_contract_tests": "29 passed, 1 warning in 0.55s",
+  "marketplace_toolkit_passed": true,
+  "package_sha256": "df2087bb40006cdb300394042e3d14150cba73122a20e6beb96bde3533e68dda",
+  "exact_package_serverless_install_passed": true,
+  "marketplace_install_tested": false,
+  "cloud_tested": false,
+  "cases": [
+    {
+      "case": "Happy Horse Audit Batch",
+      "tool": "happyhorse_tasks_retrieve_batch",
+      "workflow_run_id": "e7296899-dca6-4dfe-827b-96099b06f907",
+      "workflow_status": "succeeded",
+      "service_status": "succeeded",
+      "task_id": "",
+      "trace_id": "",
+      "media_urls": [
+        "https://platform2.cdn.acedata.cloud/happyhorse/07903615-7a87-4888-be69-6108d598f7a5.mp4"
+      ],
+      "error": null,
+      "new_submission": false,
+      "media_verification": [
+        {
+          "case": "Happy Horse Audit Batch",
+          "size": 798142,
+          "sha256": "252b7fe534555e60f6b9e362df8485e16b4e5c047a42d7f318efe19be217ee46",
+          "duration": "3.162667",
+          "streams": [
+            {
+              "codec_name": "h264",
+              "codec_type": "video",
+              "width": 1280,
+              "height": 720
+            },
+            {
+              "codec_name": "aac",
+              "codec_type": "audio",
+              "width": null,
+              "height": null
+            }
+          ],
+          "full_decode": true
+        }
+      ],
+      "result_fields": [
+        "items"
+      ],
+      "screenshot": "evidence/happy-horse-audit-batch.png",
+      "workflow": "evidence/happy-horse-audit-batch-workflow.json"
+    }
+  ],
+  "primary_blocked": false,
+  "scope_note": "Recorded cases only. Batch regressions reuse earlier paid successful tasks; those media generations are not billed or claimed as new. New paid calls have separate usage reconciliation. Optional untested models/actions are not claimed as passed; original failures and their corrections are preserved."
+}
