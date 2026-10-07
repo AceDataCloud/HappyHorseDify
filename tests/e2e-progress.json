@@ -11,5 +11,5 @@
       "error": null
     }
   ],
-  "status": "E2E and output/billing audit in progress"
+  "status": "Primary operation completed in real Dify; final evidence in e2e-results.json"
 }
