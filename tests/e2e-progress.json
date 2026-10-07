@@ -1,0 +1,15 @@
+{
+  "environment": "Dify CE 1.17.1, plugin daemon 0.6.10-local, official remote debug, signature verification enabled",
+  "marketplace_install_tested": false,
+  "cases": [
+    {
+      "case": "Happy Horse Dify E2E",
+      "workflow_status": "succeeded",
+      "task_status": "succeeded",
+      "task_id": "07903615-7a87-4888-be69-6108d598f7a5",
+      "browser_ui_run": true,
+      "error": null
+    }
+  ],
+  "status": "E2E and output/billing audit in progress"
+}

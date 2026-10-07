@@ -1,0 +1,21 @@
+{
+  "backend_revision": "7b4bbf0e4f6b83c273baed1d5b8e9bea0f3ece1c",
+  "apis": [
+    {
+      "path": "/happyhorse/videos",
+      "spec": "openapi/d656e357-50cb-4390-b8c9-67464bc2a2f2.json"
+    }
+  ],
+  "icon_source": {
+    "repository": "AceDataCloud/HappyHorseN8N",
+    "revision": "91ee340909283a92339de9403cdc9323bffa53ce",
+    "files": [
+      "nodes/HappyHorse/icon.dark.png",
+      "nodes/HappyHorse/icon.png"
+    ]
+  },
+  "icon_sha256": {
+    "icon.png": "3c65444ab781bd380eab11fd309538259fa603a4e1294d8d2817622a121bf7bd",
+    "icon.dark.png": "3c65444ab781bd380eab11fd309538259fa603a4e1294d8d2817622a121bf7bd"
+  }
+}
