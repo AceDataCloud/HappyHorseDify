@@ -1,0 +1,282 @@
+{
+  "nodes": [
+    {
+      "id": "start",
+      "type": "custom",
+      "data": {
+        "type": "start",
+        "title": "Start",
+        "desc": "",
+        "variables": [],
+        "selected": false
+      },
+      "position": {
+        "x": 0,
+        "y": 100
+      },
+      "width": 242,
+      "height": 73,
+      "sourcePosition": "right",
+      "targetPosition": "left",
+      "zIndex": 0,
+      "positionAbsolute": {
+        "x": 0,
+        "y": 100
+      }
+    },
+    {
+      "id": "generate",
+      "type": "custom",
+      "data": {
+        "type": "tool",
+        "title": "Happy Horse",
+        "desc": "",
+        "provider_id": "acedatacloud/happyhorse/happyhorse",
+        "provider_name": "acedatacloud/happyhorse/happyhorse",
+        "provider_type": "builtin",
+        "tool_name": "happyhorse_generate_video",
+        "tool_label": "Happy Horse Generate",
+        "tool_configurations": {
+          "action": {
+            "type": "constant",
+            "value": "generate"
+          },
+          "model": {
+            "type": "constant",
+            "value": "happyhorse-1.1-t2v"
+          },
+          "resolution": {
+            "type": "constant",
+            "value": "720P"
+          },
+          "ratio": {
+            "type": "constant",
+            "value": "16:9"
+          },
+          "duration": {
+            "type": "constant",
+            "value": 3
+          },
+          "watermark": {
+            "type": "constant",
+            "value": false
+          },
+          "audio_setting": {
+            "type": "constant",
+            "value": "auto"
+          }
+        },
+        "tool_parameters": {
+          "prompt": {
+            "type": "constant",
+            "value": "A teal ceramic cube on a cream table, camera slowly moves around it, simple studio lighting, no text."
+          }
+        },
+        "tool_node_version": "2",
+        "plugin_unique_identifier": "acedatacloud/happyhorse:0.0.1@0d9af63b5ec581a9415bf25b6536f58fe1539aa914b27b4fe51156fac6ac2a5a",
+        "retry_config": {
+          "retry_enabled": false,
+          "max_retries": 0,
+          "retry_interval": 1000
+        },
+        "selected": false
+      },
+      "position": {
+        "x": 300,
+        "y": 100
+      },
+      "width": 242,
+      "height": 244,
+      "sourcePosition": "right",
+      "targetPosition": "left",
+      "zIndex": 0,
+      "positionAbsolute": {
+        "x": 300,
+        "y": 100
+      }
+    },
+    {
+      "id": "wait",
+      "type": "custom",
+      "data": {
+        "type": "tool",
+        "title": "Retrieve completed task",
+        "desc": "",
+        "provider_id": "acedatacloud/happyhorse/happyhorse",
+        "provider_name": "acedatacloud/happyhorse/happyhorse",
+        "provider_type": "builtin",
+        "tool_name": "happyhorse_task_retrieve",
+        "tool_label": "Happy Horse Retrieve Task",
+        "tool_configurations": {
+          "wait_seconds": {
+            "type": "constant",
+            "value": 240
+          }
+        },
+        "tool_parameters": {
+          "task_id": {
+            "type": "variable",
+            "value": [
+              "generate",
+              "task_id"
+            ]
+          }
+        },
+        "tool_node_version": "2",
+        "plugin_unique_identifier": "acedatacloud/happyhorse:0.0.1@0d9af63b5ec581a9415bf25b6536f58fe1539aa914b27b4fe51156fac6ac2a5a",
+        "retry_config": {
+          "retry_enabled": false,
+          "max_retries": 0,
+          "retry_interval": 1000
+        },
+        "selected": false
+      },
+      "position": {
+        "x": 600,
+        "y": 100
+      },
+      "width": 242,
+      "height": 88,
+      "sourcePosition": "right",
+      "targetPosition": "left",
+      "zIndex": 0,
+      "positionAbsolute": {
+        "x": 600,
+        "y": 100
+      }
+    },
+    {
+      "id": "end",
+      "type": "custom",
+      "data": {
+        "type": "end",
+        "title": "Output",
+        "desc": "",
+        "outputs": [
+          {
+            "variable": "status",
+            "value_selector": [
+              "wait",
+              "status"
+            ]
+          },
+          {
+            "variable": "success",
+            "value_selector": [
+              "wait",
+              "success"
+            ]
+          },
+          {
+            "variable": "task_id",
+            "value_selector": [
+              "wait",
+              "task_id"
+            ]
+          },
+          {
+            "variable": "trace_id",
+            "value_selector": [
+              "wait",
+              "trace_id"
+            ]
+          },
+          {
+            "variable": "media_urls",
+            "value_selector": [
+              "wait",
+              "media_urls"
+            ]
+          },
+          {
+            "variable": "data",
+            "value_selector": [
+              "wait",
+              "data"
+            ]
+          },
+          {
+            "variable": "result",
+            "value_selector": [
+              "wait",
+              "result"
+            ]
+          },
+          {
+            "variable": "files",
+            "value_selector": [
+              "wait",
+              "files"
+            ]
+          }
+        ],
+        "selected": false
+      },
+      "position": {
+        "x": 900,
+        "y": 100
+      },
+      "width": 242,
+      "height": 270,
+      "sourcePosition": "right",
+      "targetPosition": "left",
+      "zIndex": 0,
+      "positionAbsolute": {
+        "x": 900,
+        "y": 100
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "start-generate",
+      "source": "start",
+      "target": "generate",
+      "sourceHandle": "source",
+      "targetHandle": "target",
+      "type": "custom",
+      "data": {
+        "sourceType": "start",
+        "targetType": "tool",
+        "isInIteration": false,
+        "isInLoop": false
+      },
+      "zIndex": 0
+    },
+    {
+      "id": "generate-wait",
+      "source": "generate",
+      "target": "wait",
+      "sourceHandle": "source",
+      "targetHandle": "target",
+      "type": "custom",
+      "data": {
+        "sourceType": "tool",
+        "targetType": "tool",
+        "isInIteration": false,
+        "isInLoop": false
+      },
+      "zIndex": 0
+    },
+    {
+      "id": "wait-end",
+      "source": "wait",
+      "target": "end",
+      "sourceHandle": "source",
+      "targetHandle": "target",
+      "type": "custom",
+      "data": {
+        "sourceType": "tool",
+        "targetType": "end",
+        "isInIteration": false,
+        "isInLoop": false
+      },
+      "zIndex": 0
+    }
+  ],
+  "viewport": {
+    "x": 60,
+    "y": 160,
+    "zoom": 0.8
+  }
+}

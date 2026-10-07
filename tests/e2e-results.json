@@ -1,0 +1,65 @@
+{
+  "tested_at": "2026-10-07T06:27:26.159491+00:00",
+  "environment": "Dify CE 1.17.1 / plugin daemon 0.6.10-local",
+  "transport": "official remote-debug; signature verification true",
+  "browser_test_run": true,
+  "marketplace_install_tested": false,
+  "cloud_tested": false,
+  "cases": [
+    {
+      "case": "Happy Horse Dify E2E",
+      "operation": "happyhorse_generate_video",
+      "workflow_run_id": "971bab1a-6269-4c68-8310-d2cbd85a6ab7",
+      "workflow_status": "succeeded",
+      "task_status": "succeeded",
+      "task_id": "07903615-7a87-4888-be69-6108d598f7a5",
+      "trace_id": "ab20ed57-c298-404a-be6b-0b2ddaf89171",
+      "media_urls": [
+        "https://platform2.cdn.acedata.cloud/happyhorse/07903615-7a87-4888-be69-6108d598f7a5.mp4"
+      ],
+      "output": [
+        {
+          "duration": 3,
+          "id": "be087ff7-12c4-4750-91d3-ea749d49f084",
+          "ratio": "16:9",
+          "resolution": "720P",
+          "state": "succeeded",
+          "video_url": "https://platform2.cdn.acedata.cloud/happyhorse/07903615-7a87-4888-be69-6108d598f7a5.mp4"
+        }
+      ],
+      "billing": {
+        "id": "3100ed87-fc81-4bdf-88c8-31660b64fb90",
+        "trace_id": "ab20ed57-c298-404a-be6b-0b2ddaf89171",
+        "status_code": 200,
+        "deducted_amount": 2.97,
+        "created_at": "2026-10-07T05:41:33.956003Z"
+      },
+      "media_verification": [
+        {
+          "case": "Happy Horse Dify E2E",
+          "size": 798142,
+          "sha256": "252b7fe534555e60f6b9e362df8485e16b4e5c047a42d7f318efe19be217ee46",
+          "duration": "3.162667",
+          "streams": [
+            {
+              "codec_name": "h264",
+              "codec_type": "video",
+              "width": 1280,
+              "height": 720
+            },
+            {
+              "codec_name": "aac",
+              "codec_type": "audio",
+              "width": null,
+              "height": null
+            }
+          ],
+          "full_decode": true
+        }
+      ],
+      "screenshot": "evidence/happy-horse-dify-e2e.png",
+      "workflow": "evidence/happy-horse-dify-e2e-workflow.json"
+    }
+  ],
+  "scope_note": "These completed cases establish the primary plugin operation. Additional exposed operations require their own case before claiming full coverage."
+}
