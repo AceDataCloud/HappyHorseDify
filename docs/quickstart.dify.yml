@@ -6,12 +6,7 @@ app:
   mode: workflow
   name: Happy Horse Step-by-step Tutorial
   use_icon_as_answer_icon: false
-dependencies:
-- current_identifier: null
-  type: marketplace
-  value:
-    marketplace_plugin_unique_identifier: acedatacloud/happyhorse:0.0.1@36b8aa0af88975439d2a2e176c5bf0c33d53074161ac922324867b61398fce05
-    version: null
+dependencies: []
 kind: app
 version: 0.7.0
 workflow:
@@ -86,7 +81,6 @@ workflow:
       zIndex: 0
     - data:
         desc: ''
-        plugin_unique_identifier: acedatacloud/happyhorse:0.0.1@36b8aa0af88975439d2a2e176c5bf0c33d53074161ac922324867b61398fce05
         provider_id: acedatacloud/happyhorse/happyhorse
         provider_name: acedatacloud/happyhorse/happyhorse
         provider_type: builtin
@@ -140,7 +134,6 @@ workflow:
       zIndex: 0
     - data:
         desc: ''
-        plugin_unique_identifier: acedatacloud/happyhorse:0.0.1@36b8aa0af88975439d2a2e176c5bf0c33d53074161ac922324867b61398fce05
         provider_id: acedatacloud/happyhorse/happyhorse
         provider_name: acedatacloud/happyhorse/happyhorse
         provider_type: builtin
