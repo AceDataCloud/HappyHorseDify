@@ -2,10 +2,10 @@ identity:
   author: acedatacloud
   name: happyhorse
   label:
-    en_US: Happy Horse
-    zh_Hans: Happy Horse
-    ja_JP: Happy Horse
-    pt_BR: Happy Horse
+    en_US: HappyHorse by Ace Data Cloud
+    zh_Hans: HappyHorse by Ace Data Cloud
+    ja_JP: HappyHorse by Ace Data Cloud
+    pt_BR: HappyHorse by Ace Data Cloud
   description:
     en_US: Use the Ace Data Cloud Happy Horse APIs in Dify workflows.
     zh_Hans: 在 Dify 工作流中使用 Ace Data Cloud Happy Horse API。
@@ -26,7 +26,7 @@ credentials_for_provider:
     help:
       en_US: Acquire a token with access to this service from the Ace Data Cloud console.
       zh_Hans: 从 Ace Data Cloud 控制台获取具有此服务权限的 Token。
-    url: https://platform.acedata.cloud/console/credentials
+    url: https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=happyhorsedify_provider_api_key
 tools:
 - tools/happyhorse_generate.yaml
 - tools/happyhorse_task_retrieve.yaml
