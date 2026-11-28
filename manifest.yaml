@@ -1,12 +1,12 @@
-version: 0.0.5
+version: 0.0.6
 type: plugin
 author: acedatacloud
 name: happyhorse
 label:
-  en_US: HappyHorse by Ace Data Cloud
-  zh_Hans: HappyHorse by Ace Data Cloud
-  ja_JP: HappyHorse by Ace Data Cloud
-  pt_BR: HappyHorse by Ace Data Cloud
+  en_US: HappyHorse
+  zh_Hans: HappyHorse
+  ja_JP: HappyHorse
+  pt_BR: HappyHorse
 description:
   en_US: Use the Ace Data Cloud Happy Horse APIs in Dify workflows.
   zh_Hans: 在 Dify 工作流中使用 Ace Data Cloud Happy Horse API。
